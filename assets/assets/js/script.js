@@ -31,3 +31,33 @@ if (Number.isNaN(length)){
    alert ('password length must less than 129 characters')
    return null;
  }
+
+ varIncludeCapital = confirm ('click ok to include Capital capital letters.' );
+
+ varIncludeNumbers = confirm ('click ok to include numbers.');
+ 
+ varIncludeSpecialCharacters = confirm ('click ok to include Capital capital letters.' );
+ 
+ varIncludeLowerCaseLetters = confirm ('click ok to include lowercase letters.' );
+
+ if (
+   IncludeCapital === false &&
+   IncludeSpecialCharacters === false &&
+   IncludeLowerCaseLetters === false &&
+   varIncludeNumbers === false &&
+   
+   )
+
+   {
+     alert ('must use atleast one character option');
+     return null;
+   }
+
+   var passwordOptions = {
+   
+    length: length,
+    IncludeCapital: IncludeCapital,
+    IncludeLowerCaseLetters: IncludeLowerCaseLetters,
+    IncludeSpecialCharacters: IncludeSpecialCharacters,
+    varIncludeNumbers: varIncludeNumbers,
+   };
