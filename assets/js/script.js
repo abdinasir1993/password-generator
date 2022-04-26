@@ -37,35 +37,57 @@ else if (passwordLengthNum > 128 ) {
  const uppercase = confirm ("include uppercase in password?")
  //variable to store numeric
  const numeric = confirm ("include numeric in password?")
- //variable to store specialcharacters
+ //variable to store special characters
  const specialCharacters = confirm ("include special characters in password?")
  
  // Variable to store the array of conditions
 
  //conditional statement for lowercase
- const getpasswordRequirements = [] ;
+ const getPasswordRequirements = [] ;
  if (lowercase) {
-   getpasswordRequirements.push("abcdefghijklmnopqrstuvwxyz");
+   getPasswordRequirements.push("abcdefghijklmnopqrstuvwxyz");
  }
 //conditional statement for uppercase
  if (uppercase ) {
-  getpasswordRequirements.push("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+  getPasswordRequirements.push("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
  }
  // conditional statement for numeric
  if (numeric ) {
-  getpasswordRequirements.push("0123456789");
+  getPasswordRequirements.push("0123456789");
  }
  // conditional statement for special characters
  if (specialCharacters ) {
-  getpasswordRequirements.push("!\"#$%&'()*+,-./:;<=>?@[]^_`{|}~");
+  getPasswordRequirements.push("!\"#$%&'()*+,-./:;<=>?@[]^_`{|}~");
  }
 
-  return getpasswordRequirements
+  return getPasswordRequirements
 };
 
-const createRandomPassword = () => {
-  return "kdUE28(@d0";
+const createRandomPassword = (passwordLength, passwordCriteria) => {
+ const passwordArray = [];
+ for (let i = 0; i < passwordLength; i += 1) {
+ 
+ //choose categories from array
+
+ const randCategoriesIndex = Math.floor(Math.random() * passwordCriteria.length);
+
+ //get random categories
+
+ const randCategories = passwordCriteria[randCategoriesIndex]
+
+ //get random index
+
+ const randIndex = Math.floor(Math.random()) * passwordCriteria.length;
+
+ // get random characters
+ const randomCharacter = randCategories.charAt(randIndex)
+ passwordArray.push(randomCharacter);
+
+
+ }
+ return passwordArray.join ("")
 };
+
 
 // main function to generate the random password
 const generatePassword = () => {
