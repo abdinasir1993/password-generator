@@ -1,8 +1,28 @@
 const generateBtn = document.querySelector("#generate");
-
+//get password length function
 const getPasswordLength = () => {
-  return 10;
+//variable that stores length of password
+const Length = prompt( "what is the password length you desire");
+
+console.log(Length);
+
+// condition for password being a number
+
+const passwordLengthNum = parseInt(length);
+if (passwordLengthNum >= 8 && passwordLengthNum <=128) {
+  return passwordLengthNum;  
+} else alert ("enter only valid numbers");
 };
+
+
+//password criteria function
+
+
+
+
+
+
+
 
 const getPasswordCriteria = () => {
   return [
