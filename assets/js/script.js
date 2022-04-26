@@ -2,18 +2,28 @@ const generateBtn = document.querySelector("#generate");
 //get password length function
 const getPasswordLength = () => {
 //variable that stores length of password
-const Length = prompt( "what is the password length you desire");
+const length = prompt( "what is the password length you desire");
 
-console.log(Length);
 
 // condition for password being a number
 
 const passwordLengthNum = parseInt(length);
-if (passwordLengthNum >= 8 && passwordLengthNum <=128) {
-  return passwordLengthNum;  
-} else alert ("enter only valid numbers");
+//conditional statement to check if password is a number
+if (Number.isNaN(passwordLengthNum)) {
+  alert("enter number");
+  return null;
+} 
+//conditional statement to check password has more than 8 characters
+else if (passwordLengthNum < 8) {
+alert("enter more than 8 characters");
+return null;
+}
+//conditional statement to see if password has less than 128 characters
+else if (passwordLengthNum > 128 ) {
+  alert("enter more than 128 characters");
+  return null;
+} else  console.log(length);
 };
-
 
 //password criteria function
 
