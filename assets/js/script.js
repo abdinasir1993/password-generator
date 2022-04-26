@@ -77,12 +77,11 @@ const createRandomPassword = (passwordLength, passwordCriteria) => {
 
  //get random index
 
- const randIndex = Math.floor(Math.random()) * passwordCriteria.length;
+ const randIndex = Math.floor(Math.random() * passwordCriteria.length);
 
  // get random characters
  const randomCharacter = randCategories.charAt(randIndex)
  passwordArray.push(randomCharacter);
-
 
  }
  return passwordArray.join ("")
