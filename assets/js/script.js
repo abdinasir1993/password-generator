@@ -14,7 +14,7 @@ if (Number.isNaN(passwordLengthNum)) {
   return null;
 } 
 //conditional statement to check password has more than 8 characters
-else if (passwordLengthNum < 8) {
+if (passwordLengthNum < 8) {
 alert("enter more than 8 characters");
 return null;
 }
@@ -91,15 +91,24 @@ const createRandomPassword = (passwordLength, passwordCriteria) => {
 // main function to generate the random password
 const generatePassword = () => {
   // get the password length
-  const passwordLength = getPasswordLength();
+  
+  const passwordLength = getPasswordLength(); 
+  if (passwordLength) {
 
   // get the password criteria
   const passwordCriteria = getPasswordCriteria();
+  if (passwordCriteria.length === 0) {
+    alert ("please choose on of the options")
+    return null
+  }
+  else {
 
   // create random password
   const password = createRandomPassword(passwordLength, passwordCriteria);
 
   return password;
+  }
+}
 };
 
 // Write password to the #password input
